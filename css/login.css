@@ -14,7 +14,7 @@ body {
 	top: 0;
 	left: 0;
 	right: 0;
-	background: #e94798;
+	background: #25a3ac;
 	color: #e7dfdf;
 	padding: 1rem 2rem;
 	box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
@@ -119,6 +119,8 @@ body {
 
 /* Media Query for Smartphone */
 @media screen and (max-width: px) {
+
+
     .header {
         padding: 0.5rem 1rem;
     }
@@ -195,3 +197,5 @@ body {
 	.carousel-slide img {
 		margin-right: 10px; /* Adjust the margin as needed */
 	}
+	}
+}

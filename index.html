@@ -1,40 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="icon" href="assets/logo.png" />
-		<title>Self Health Mentoring</title>
-        <link rel="stylesheet" type="text/css" href="css/mystyle.css">
-        <body>
-            <!-- navbar -->
-			<div class="header">  
-				<div class="header_logo">
-				  <strong>NOV</strong>
-				</div>
-				<nav class="navbar">
-				  <ul class="navbar_menu">
-					<li class="navbar_item">
-					  <a href="index.html" class="navbar_link"><i data-feather="home"></i><span>Home</span> </a>
-					</li>
-					<li class="navbar_item">
-					  <a href="register.html" class="navbar_link"><i data-feather="register"></i><span>Register</span></a>        
-					</li>
-					<li class="navbar_item">
-					  <a href="login.html" class="navbar_link"><i data-feather="login"></i><span>Login</span></a>        
-					</li>
-					<li class="navbar_item">
-					  <a href="categories/bbideal.html" class="navbar_link"><i data-feather="bb-ideal"></i><span>Berat Badan Ideal</span></a>        
-					</li>
-				  </ul>
-				</nav>
-			  </div>
-        <!-- header -->
-		<header class="home">
-			<div class="homepage">
-				<img src="img/kess1.png">
-			</div>
-				<div class="judul">
-					<div>
-						<p><b>Self Health Mentoring</b></p>
-					</div>
-				</div>
+<head>
+    <link rel="icon" href="assets/logo.png" />
+    <title>Self Health Mentoring</title>
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+</head>
+<body>
+    <!-- navbar -->
+    <div class="header">  
+        <div class="header_logo">
+            <strong>NOV</strong>
+        </div>
+        <nav class="navbar">
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="index.html" class="navbar_link"><i data-feather="home"></i><span>Home</span></a>
+                </li>
+                <li class="navbar_item">
+                    <a href="register.html" class="navbar_link"><i data-feather="register"></i><span>Register</span></a>        
+                </li>
+                <li class="navbar_item">
+                    <a href="login.html" class="navbar_link"><i data-feather="login"></i><span>Login</span></a>        
+                </li>
+                <li class="navbar_item">
+                    <a href="categories/bbideal.html" class="navbar_link"><i data-feather="bb-ideal"></i><span>Berat Badan Ideal</span></a>        
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- header -->
+    <header class="home">
+        <div class="judul">
+            <div>
+                <p><b>Self Health Mentoring</b></p>
+            </div>
+            <div class="homepage">
+                <img src="img/kess1.png">
+                <div class="fitur">
+                    <div class="kotak">
+                        <img src="img/1557d9bdda03ec0.jpg" alt="">
+                        <p>Berat badan ideal</p>
+                    </div>
+                    <div class="kotak">
+                        <img src="img/Pola+Makan+Sehat.png" alt="">
+                        <p>Makanan sehat <br> Tools</p>
+                    </div>
+                    <div class="kotak">
+                        <img src="img/otakpink.jpg" alt="">
+                        <p>Mental health <br> Tools</p>
+                    </div>
+                    <div class="kotak">
+                        <img src="img/578be85dac5e449890ed25776e4f9b19~tplv-tej9nj120t-origin.webp" alt="">
+                        <p>bakar kalori tubuh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+        <h2>Self health monitoring</h2>
+        <p><j>Self health monitoring is the process by which individuals actively observe their own physical, emotional, and mental conditions to identify potential health changes or issues. This method can be carried out in various ways, ranging from documenting symptoms and changes in a personal health journal to utilizing technological devices such as mobile applications or wearable devices that can track various health parameters such as heart rate, levels of physical activity, sleep patterns, and more.
+
+            Self health monitoring enables individuals to take an active role in managing their own health, noticing early signs of illness or health conditions that require further medical attention. It can also help identify unhealthy behavioral patterns or lifestyles that may contribute to health problems, thus allowing individuals to make necessary changes to improve their overall health.
+            
+            With the advancement of technology, self health monitoring has become easier and more accurate. Many mobile applications and wearable devices can provide real-time information about an individual's health, allowing users to track their progress over time and make better decisions about their healthcare.
+            
+            Although self health monitoring can be a highly useful tool in maintaining health and preventing diseases, it's important to remember that it does not replace professional medical care. If individuals experience concerning symptoms or have concerns about their health, it's crucial to consult with a doctor or other healthcare professional for further evaluation and appropriate treatment.</p>
+        </j></div>
+        <button class="button-start" id="startExploringBtn">START STARTED </button>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="img/cinta.png" width="180" height="180" />
+                <img src="img/kess1.png" width="180" height="180" />
+                <img src="img/cinta.png" width="180" height="180" />
+                <img src="img/ideal.png" width="180" height="180" />
+                <img src="img/tangan.jpg" width="180" height="180" />   
+                <img src="img/cinta.png" width="180" height="180" />
+                <img src="img/kess1.png" width="180" height="180" />
+                <img src="img/cinta.png" width="180" height="180" />
+                <img src="img/ideal.png" width="180" height="180" />
+                <img src="img/tangan.jpg" width="180" height="180" />   
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const images = document.querySelectorAll('.carousel-slide img');
+    
+            let counter = 0;
+            const slideWidth = images[0].clientWidth;
+            const intervalTime = 2000;
+    
+            function nextSlide() {
+                if (counter >= images.length - 1) {
+                    counter = 0;
+                } else {
+                    counter++;
+                }
+                carouselSlide.style.transform = `translateX(-${slideWidth * counter}px)`;
+            }
+    
+            function prevSlide() {
+                if (counter <= 0) {
+                    counter = images.length - 1;
+                } else {
+                    counter--;
+                }
+                carouselSlide.style.transform = `translateX(-${slideWidth * counter}px)`;
+            }
+    
+            function startCarousel() {
+                setInterval(() => {
+                    nextSlide();
+                }, intervalTime);
+            }
+    
+            const startExploringBtn = document.getElementById('startExploringBtn');
+            startExploringBtn.addEventListener('click', () => {
+                alert('Button clicked! Have Fun to Self Health Monitoring!');
+            });
+    
+            startCarousel();
+        });
+    </script>    
+</body>
 </html>
