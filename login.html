@@ -3,6 +3,17 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <title>Self Health Monitoring</title>
+    <script>
+        function confirmSubmit() {
+            var confirmed = confirm("Are you sure you want to submit this form?");
+            return confirmed;
+        }
+    
+        function doubleClickSubmit() {
+            // Menampilkan alert box ketika tombol di-double klik
+            alert("Form submission triggered by double click!");
+        }
+    </script>    
 </head>
 <body style="background: url('img/sehatblue.jpg') center/cover;">
     <!-- navbar -->
@@ -28,7 +39,7 @@
     <div style="text-align: center;">
         <h1>Welcome to Self Health Monitoring Login Page</h1>
     </div>
-    <form>
+    <form id="loginForm" onsubmit="return confirmSubmit()">
         <div class="container">
             <div style="text-align: center;">
                 <table>
@@ -38,7 +49,8 @@
                     <input type="email" id="email" name="email"><br>
                     <label for="password">Password:</label><br>
                     <input type="password" id="password" name="password"><br>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" ondblclick="doubleClickSubmit()">
+
                 </table>
             </div>
         </div>

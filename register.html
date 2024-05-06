@@ -1,48 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="icon" href="img/ideal.png" />
-		<title>Home</title>
-	</head>
-	<body style="background: url('img/tangan.jpg') center/cover;">
-		<!-- Page content here -->
-	  </body>
-	<body>
-  <center>
-	<header>
-		<nav>
-			<div class="logo">
-				<img src="img/ideal.png" alt="" />
-			</div>
-			<a href="bbideal.html">Informasi_medis</a>
-			<a href="index.html">Home</a>
-			<a href="login.html">Login</a>
-		</nav>
-	</header>
-	<main>
-		<div class="form-login">
-        <form>
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username"><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password"><br>
-			<label for="tanggal lahir">tanggal lahir : </label><br>
-			<input type="jenis kelamin" id="jenis kelamin" name="jenis kelamin"><br>
-			<label for="No_hp">No_hp : </label><br>
-			<input type="No_hp " id="No_hp" name="No_hp"><br> 
-			<label for="alamat">Alamat</label><br>
-			<input type="alamat"id="email" name="email" ><br>
-			<label for="Informasi_medis">Informasi_medis : </label><br>
-			<input type="Informasi_medis" id="Informasi_medis" name="Informasi_medis"><br>
+<head>
+    <link rel="icon" href="img/ideal.png" />
+    <title>Home</title>
+    <script>
+        function submitForm() {
+            return new Promise((resolve, reject) => {
+                // Mengambil nilai dari setiap input
+                var username = document.getElementById("username").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var tgl_lahir = document.getElementById("tgl_lahir").value;
+                var jenis_kelamin = document.getElementById("jenis_kelamin").value;
+                var no_hp = document.getElementById("No_hp").value;
+                var alamat = document.getElementById("alamat").value;
+                var informasi_medis = document.getElementById("informasi_medis").value;
 
-			<input type="submit" value="Submit">
-            <input type="submit" value="Batal">
-        </form>
-		</div>
-	</main>
-   </center>
-	</body>
+                // Menyimpan data ke dalam objek
+                var formData = {
+                    username: username,
+                    email: email,
+                    password: password,
+                    tgl_lahir: tgl_lahir,
+                    jenis_kelamin: jenis_kelamin,
+                    no_hp: no_hp,
+                    alamat: alamat,
+                    informasi_medis: informasi_medis
+                };
+
+                // Simpan data ke dalam Local Storage
+                localStorage.setItem('formData', JSON.stringify(formData));
+
+                // Resolve promise dengan pesan berhasil
+                resolve("Simpan data pada Local Storage!");
+            });
+        }
+
+        function handleFormSubmission() {
+            submitForm()
+                .then((message) => {
+                    // Menampilkan pesan konfirmasi jika berhasil
+                    alert(message);
+                })
+                .catch((error) => {
+                    // Menampilkan pesan error jika terjadi kesalahan
+                    alert("An error occurred: " + error);
+                });
+        }
+    </script>
+</head>
+<body style="background: url('img/tangan.jpg') center/cover;">
+    <!-- Page content here -->
+    <center>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="img/ideal.png" alt="" />
+                </div>
+                <a href="bbideal.html">Informasi Medis</a>
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </header>
+        <main>
+            <div class="form-login">
+                <form id="loginForm">
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username"><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br>
+                    <label for="tanggal lahir">Tanggal Lahir:</label><br>
+                    <input type="text" id="tgl_lahir" name="tgl_lahir"><br>
+                    <label for="jenis kelamin">Jenis Kelamin:</label><br>
+                    <input type="text" id="jenis_kelamin" name="jenis_kelamin"><br>
+                    <label for="No_hp">No_hp:</label><br>
+                    <input type="text" id="No_hp" name="No_hp"><br> 
+                    <label for="alamat">Alamat:</label><br>
+                    <input type="text" id="alamat" name="alamat"><br>
+                    <label for="informasi_medis">Informasi Medis:</label><br>
+                    <input type="text" id="informasi_medis" name="informasi_medis"><br>
+
+                    <!-- Panggil fungsi handleFormSubmission() saat tombol Submit diklik -->
+                    <input type="button" value="Submit" onclick="handleFormSubmission()">
+                    <input type="reset" value="Reset">
+                </form>
+            </div>
+        </main>
+    </center>
+</body>
 </html>
-
